@@ -9,6 +9,8 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 const indexRoutes = require('./routes/index');
+const gamesRoutes = require('./routes/games');
+const authRouter = require('./routes/auth');
 
 
 // create the Express app
@@ -40,8 +42,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
   res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
@@ -51,6 +51,8 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
+app.use('/auth', authRouter);
+app.use('/games', gamesRoutes);
 
 
 // invalid request, send 404 page
