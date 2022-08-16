@@ -9,28 +9,26 @@
     <div>
         <%= game.releaseYear %>
     </div>
+        <div>System: </div>
+    <div>
+      <%= game.system %>
+    </div>
 </section>
 
 <% if (user) { %>
     <br><br>
-    <h2>Reviews</h2>
+    <h2>Memories</h2>
     <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
-      <label>Review:</label>
+      <label>Memories:</label>
       <textarea name="content"></textarea>
-      <label>Rating:</label>
+      <label>Most Memorable:</label>
       <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+        <option value="Graphics">Graphics</option>
+        <option value="Music">Music</option>
+        <option value="Gameplay">Gameplay</option>
+        <option value="Story">Story</option>
       </select>
-      <input type="submit" value="Add Review">
+      <input type="submit" value="Add">
     </form>
     <% } %>
 
@@ -42,7 +40,7 @@
               <th>User</th>
               <th>Date</th>
               <th>Review</th>
-              <th>Rating</th>
+              <th>Most Memorable</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +57,10 @@
                     <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                       <button type="submit">X</button>
                     </form>
+                    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+
+                        <button type="submit">UPDATE COMMENT</button>
+                      </form>
                   <% } %>
                 </td>
               </tr>

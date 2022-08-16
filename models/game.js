@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const reviewSchema = new mongoose.Schema(
     {
         content: String,
-        rating: {type: Number,min: 1, max: 10, default: 5 },
+        rating: {type: String},
         user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
         userName: String,
     },
@@ -27,6 +27,8 @@ const gameSchema = new mongoose.Schema({
             return new Date().getFullYear();
         },
     },
+    system: String,
+
     reviews: [reviewSchema],
 });
 
