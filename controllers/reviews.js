@@ -1,6 +1,6 @@
 const Game = require('../models/game');
 
-module.export = {
+module.exports = {
     create,
     delete: deleteReview
 };
