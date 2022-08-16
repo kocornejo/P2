@@ -12,7 +12,7 @@ const methodOverride = require('method-override');
 const indexRoutes = require('./routes/index');
 const gamesRoutes = require('./routes/games');
 const reviewsRouter = require('./routes/reviews');
-const authRouter = require('./routes/auth');
+// const authRouter = require('./routes/auth');
 
 
 // create the Express app
@@ -53,7 +53,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/auth', authRouter);
+// app.use('/auth', authRouter);
 app.use('/games', gamesRoutes);
 app.use('/', reviewsRouter);
 

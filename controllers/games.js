@@ -17,9 +17,10 @@ function newGame(req, res) {
 };
 
 function create(req, res) {
+    Game.create(req.body, function (err, gameDocs){
     res.redirect(`/games`)
+})
 };
-
 
 
 function index(req, res) {

@@ -8,7 +8,9 @@
 </head>
 <body>
     <nav>
+        <a href="/movies">ALL MOVIES</a>
         <% if (user) { %>
+            <a href="/games/new" >ADD GAME</a>
             <a href="/logout">LOG OUT</a>
           <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img></a>
