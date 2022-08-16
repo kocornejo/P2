@@ -24,7 +24,9 @@ nav {
     top: 0px;
     right: 0px;
     width: 100%;
-    color: red;
     padding: 8px;
     background-color: black;
+}
+header {
+  color: red;
 }

@@ -7,10 +7,20 @@ module.exports = {
     new: newGame,
 };
 
-function show(req, res) {
-    res.render("games/show", {
-    })
-};
+async function show(req, res) {
+   
+    try {
+      const gameDocument = await Game.findById(req.params.id)
+                                        .exec()
+      res.render("games/show", {
+        title: "Game Detail",
+        game: gameDocument,
+      });
+  
+    } catch(err){
+      res.send(err);
+    }
+}
 
 function newGame(req, res) {
     res.render("games/new.ejs")
@@ -18,7 +28,7 @@ function newGame(req, res) {
 
 function create(req, res) {
     Game.create(req.body, function (err, gameDocs){
-    res.redirect(`/games`)
+    res.redirect(`/games/${gameDocs._id}`);
 })
 };
 

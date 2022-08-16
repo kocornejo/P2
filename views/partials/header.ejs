@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Document</title>
 </head>
 <body>
     <nav>
-        <a href="/movies">ALL MOVIES</a>
+        <a href="/movies" id="header">ALL MOVIES</a>
         <% if (user) { %>
-            <a href="/games/new" >ADD GAME</a>
-            <a href="/logout">LOG OUT</a>
+            <a href="/games/new" id="header">ADD GAME</a>
+            <a href="/logout" id="header">LOG OUT</a>
           <% } else { %>
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img></a>
+            <a href="/auth/google" class="login" id="header">LOG IN&nbsp;<img></a>
             <% } %>
     </nav>
     
