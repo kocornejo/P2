@@ -23,7 +23,9 @@ async function show(req, res) {
 }
 
 function newGame(req, res) {
-    res.render("games/new.ejs")
+    console.log("hitting new game function");
+    // console.log(res);
+    res.render("games/new")
 };
 
 function create(req, res) {
