@@ -18,3 +18,13 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+nav {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    color: red;
+    padding: 8px;
+    background-color: black;
+}

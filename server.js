@@ -8,8 +8,10 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+
 const indexRoutes = require('./routes/index');
 const gamesRoutes = require('./routes/games');
+const reviewsRouter = require('./routes/reviews');
 const authRouter = require('./routes/auth');
 
 
@@ -53,6 +55,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/auth', authRouter);
 app.use('/games', gamesRoutes);
+app.use('/', reviewsRouter);
 
 
 // invalid request, send 404 page

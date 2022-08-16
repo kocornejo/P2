@@ -4,7 +4,7 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.render('index', {user: req.user ? req.user : null});
+  res.render('games', {user: req.user ? req.user : null});
   //UPDATE THIS
   // Where do you want to go for the root route
   // in the student demo this was res.redirect('/movies'), what do you want?
@@ -22,8 +22,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect : '/' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect : '/games', // UPDATE THIS, where do you want the client to go after you login 
+    failureRedirect : '/games' //  UPDATE THIS, where do you want the client to go if login fails
   }
 ));
 
