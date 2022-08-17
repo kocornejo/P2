@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
 	  required: true
 	},
 	email: String,
+	game: {type: mongoose.Schema.Types.ObjectId, ref: 'Game', required: true},
   }, {
 	timestamps: true
   });

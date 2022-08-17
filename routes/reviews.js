@@ -4,7 +4,8 @@ const reviewsCtrl = require('../controllers/reviews');
 
 router.post('/games/:id/reviews', reviewsCtrl.create);
 router.get('/reviews/:id/edit', reviewsCtrl.edit);
-router.delete('/reviews/:id', reviewsCtrl.delete);
+router.put('/reviews/:id', reviewsCtrl.updateReview)
+router.delete('/reviews/:id', reviewsCtrl.deleteReview);
 
 
 

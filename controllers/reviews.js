@@ -2,20 +2,19 @@ const Game = require('../models/game');
 
 module.exports = {
     create,
+    updateReview,
     edit,
-    update,
-    delete: deleteReview
+    deleteReview
 };
 
-function update(req, res) {
+function updateReview(req, res) {
 
     Game.findOne({'review._id': req.params.id}, function(err, game) {
 
       const reviewSubdoc = game.reviews.id(req.params.id);
 
-      if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/games/${game._id}`);
-
-      reviewSubdoc.text = req.body.text;
+      reviewSubdoc.content = req.body.content;
+      reviewSubdoc.rating = req.body.rating;
 
       game.save(function(err) {
 
@@ -34,6 +33,7 @@ function edit(req, res) {
   }
 
 async function deleteReview(req, res){
+    console.log(req.params)
     try {
   
       const gameDocument = await Game.findOne({
