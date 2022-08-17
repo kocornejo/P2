@@ -29,7 +29,7 @@ function edit(req, res) {
 
       const review = game.reviews.id(req.params.id);
 
-      res.render('reviews/edit', {review});
+      res.render('games/edit', {review});
     });
   }
 
