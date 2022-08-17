@@ -17,9 +17,9 @@
 
 <% if (user) { %>
     <br><br>
-    <h2>Memories</h2>
+    <h2>Comments</h2>
     <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
-      <label>Memories:</label>
+      <label>Comment:</label>
       <textarea name="content"></textarea>
       <label>Most Memorable:</label>
       <select name="rating">
@@ -39,7 +39,7 @@
             <tr>
               <th>User</th>
               <th>Date</th>
-              <th>Review</th>
+              <th>Comment</th>
               <th>Most Memorable</th>
             </tr>
           </thead>
@@ -55,10 +55,10 @@
                 <td>
                   <% if (user?._id.equals(r.user)) { %>
                     <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                      <button type="submit">X</button>
+                      <button type="submit">Delete Comment</button>
                     </form>
                     <form action="/reviews/<%= r._id %>/edit">
-                        <button type="submit">UPDATE COMMENT</button>
+                        <button type="submit">Update Comment</button>
                       </form>
                   <% } %>
                 </td>
