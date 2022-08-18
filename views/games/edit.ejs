@@ -5,7 +5,7 @@
     <label>Comment:</label>
     <textarea name="content" value="<%= review.content %>"></textarea>
     <label>Most Memorable:</label>
-    <select name="rating" value="<%= review.rating %>"  >
+    <select name="rating" value="<%= review.rating %>">
       <option value="Graphics">Graphics</option>
       <option value="Music">Music</option>
       <option value="Gameplay">Gameplay</option>
@@ -13,3 +13,4 @@
     </select>
     <input type="submit" value="Update">
   </form>
+  <%- include('../partials/footer') %>
