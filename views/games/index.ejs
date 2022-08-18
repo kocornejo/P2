@@ -16,7 +16,9 @@
                     <td>
                         <%= m.releaseYear %>
                     </td>
-                    <td><a href="/games/<%= m._id %>">DETAILS</a></td>
+                    <td>
+                        <a href="/games/<%= m._id %>" id="details">SELECT</a>
+                    </td>
                 </tr>
                 <% }); %>
         </tbody>

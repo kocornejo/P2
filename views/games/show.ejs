@@ -17,7 +17,7 @@
 
     <% if (user) { %>
         <br><br>
-        <h2>Comments</h2>
+        <h2 class="text-decoration-underline">Comments</h2>
         <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
             <label>Comment:</label>
             <textarea name="content"></textarea>
@@ -43,7 +43,7 @@
                             <th>Most Memorable</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="stuff-added">
                         <% let total=0 %>
                             <% game.reviews.forEach(function(r) { %>
                                 <% total +=r.rating %>
@@ -84,7 +84,7 @@
                 </table>
 
                 <% } else { %>
-                    <h5>No Reviews Yet</h5>
+                    <h5>No Comments Yet</h5>
                     <% } %>
 
                         <%- include('../partials/footer') %>
