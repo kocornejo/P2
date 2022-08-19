@@ -17,7 +17,7 @@
     <br><br><br><br><br>
 
     <% if (user) { %>
-                    
+
         <h2 class="text-decoration-underline">Comments</h2>
         <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
             <label>Comment:</label>
@@ -62,15 +62,15 @@
                                             <%= r.rating %>
                                         </td>
                                         <td>
-                                            
-<% if(user==r.userId){  %> 
-                                            <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                                                <button type="submit">Delete Comment</button>
-                                            </form>
-                                            <form action="/reviews/<%= r._id %>/edit">
-                                                <button type="submit">Update Comment</button>
-                                            </form>
-                                            <% }  %> 
+
+                                            <% if(user==r.userId){ %>
+                                                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                                    <button type="submit">Delete Comment</button>
+                                                </form>
+                                                <form action="/reviews/<%= r._id %>/edit">
+                                                    <button type="submit">Update Comment</button>
+                                                </form>
+                                                <% } %>
 
                                         </td>
                                     </tr>

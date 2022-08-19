@@ -9,14 +9,14 @@ module.exports = {
 
 async function show(req, res) {
     let user = false
-    if(req.user) {
+    if (req.user) {
         user = req.user.id
     }
     console.log("user", user)
     try {
         const gameDocument = await Game.findById(req.params.id)
             .exec()
-            console.log('this is game document', gameDocument, "this is the user", req.user)
+        console.log('this is game document', gameDocument, "this is the user", req.user)
         res.render("games/show", {
             title: "Game Detail",
             game: gameDocument,
@@ -39,7 +39,7 @@ function create(req, res) {
     Game.create(req.body, function (err, gameDocs) {
         res.redirect(`/games/${gameDocs._id}`);
 
-        })
+    })
 };
 
 
