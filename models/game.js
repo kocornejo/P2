@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
     {
+        userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
         content: String,
         rating: String,
         userName: String,
@@ -27,6 +28,7 @@ const gameSchema = new mongoose.Schema({
         },
     },
     system: String,
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
     reviews: [reviewSchema],
 });

@@ -8,13 +8,19 @@ module.exports = {
 };
 
 async function show(req, res) {
-
+    let user = false
+    if(req.user) {
+        user = req.user.id
+    }
+    console.log("user", user)
     try {
         const gameDocument = await Game.findById(req.params.id)
             .exec()
+            console.log('this is game document', gameDocument, "this is the user", req.user)
         res.render("games/show", {
             title: "Game Detail",
             game: gameDocument,
+            user
         });
 
     } catch (err) {
@@ -29,9 +35,11 @@ function newGame(req, res) {
 };
 
 function create(req, res) {
+    req.body.userId = req.user._id
     Game.create(req.body, function (err, gameDocs) {
         res.redirect(`/games/${gameDocs._id}`);
-    })
+
+        })
 };
 
 

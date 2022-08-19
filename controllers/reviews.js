@@ -1,5 +1,5 @@
 const Game = require('../models/game');
-
+const User = require('../models/user')
 module.exports = {
     create,
     updateReview,
@@ -10,6 +10,7 @@ module.exports = {
 function updateReview(req, res) {
 
     Game.findOne({ 'review._id': req.params.id }, function (err, game) {
+        console.log('this is the game', game)
 
         const reviewSubdoc = game.reviews.id(req.params.id);
 
@@ -27,8 +28,9 @@ function edit(req, res) {
     Game.findOne({ 'reviews._id': req.params.id }, function (err, game) {
 
         const review = game.reviews.id(req.params.id);
+        console.log('review', review)
 
-        res.render('games/edit', { review });
+        res.render('games/edit', { review, game });
     });
 }
 
@@ -38,7 +40,7 @@ async function deleteReview(req, res) {
 
         const gameDocument = await Game.findOne({
             'reviews._id': req.params.id,
-            'reviews.user': req.user._id
+            'reviews.userId': req.user._id
         });
         if (!gameDocument) return res.redirect('/games');
         gameDocument.reviews.remove(req.params.id);
@@ -53,7 +55,7 @@ async function deleteReview(req, res) {
 
 function create(req, res) {
     Game.findById(req.params.id, function (err, gameDocument) {
-        req.body.user = req.user._id;
+        req.body.userId = req.user._id;
         req.body.userName = req.user.name;
 
         gameDocument.reviews.push(req.body);
