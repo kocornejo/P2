@@ -1,4 +1,13 @@
-
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+    
+}
 
 @font-face {
   font-family: 'Nintendoid1';
@@ -61,7 +70,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: blue;
+  background-color: #6975fa;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -72,8 +81,9 @@ main {
   grid-gap: 1rem;
 }
 
-#stuff-added {
-  color: aqua;
+
+thead {
+  font-size: x-large;
 }
 
 button, button::after {
@@ -81,7 +91,7 @@ button, button::after {
   height: 43px;
   font-size: 18px;
   font-family: 'Bebas Neue', cursive;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #fa6975 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
@@ -107,7 +117,7 @@ button::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #75fa69 3%, #75fa69 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 3%, #75fa69 3%, #75fa69 5%, #fa6975 5%);
   text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #75fa69;
   clip-path: var(--slice-0);
 }
@@ -163,4 +173,14 @@ button:hover::after {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
+}
+
+#show-page {
+font-size: x-large;
+}
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
