@@ -1,35 +1,34 @@
-# passport-boilerplate
+# FIGHTING GAME STUFF
+An app to talk about your beloved fight game memories. From games that were super popular to obscure games you think you're the only one that remembers.
 
 
-This is your passport boilerplate.
 
-## Setup 
+## Screenshots
+Here's the front page with links to games already added and a link to add your own game.
+![alt text](public/images/FP.png)
+Here is an example of what you'd find on an already created page
+![alt text](public/images/SF.png)
 
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
 
 
-#### Setup your git repo
-0. Setup your `.env` file and add all the things you need! (look at mongoose movies for reference!)
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin main` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin main`
 
-#### Setup your login (THE APP WON'T WORK until you do, no VIEWS are setup, or the landing route)
+#### Technologies Used
+I used js, css, bootstrap, color hex
+cyberpunk 2077 Glitch Button
+CRT Screen Text Flicker Animation In Pure CSS
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
 
-#### Make a commit 
+#### LINK TO APP
+https://fightforever.herokuapp.com/games
 
-```git commit -m "setup up oauth and User Model"```
+#### IceBox
+i want to be able to add pictures of the games
+i want to categorize games by system in their own seperate pages
+add animations and retro sound effects for clicks
+
+
+
+## Thank Yous
+i want to thank my inscructors and TAs for helping me figuring things out.
+i want to thank my classmates for being a huge massive source of help and always taking the time when it was needed. and not just the help but for the laughs and more. first project where i struggled but never lost my cool because they were there to talk.
+thank you to my partner for being there everyday supporting me, providing sustenence and hugs and all the good things even when stressed to high hell.
